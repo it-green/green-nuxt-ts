@@ -6,7 +6,7 @@ v-app
             v-toolbar-title Nuxt TS App
     v-navigation-drawer(v-model='drawer')
         v-list(dense)
-            v-list-item(v-for='(item, i) in items' :key='i' link)
+            v-list-item(v-for='(item, i) in items' :key='i' link router)
                 v-list-item-content
                     v-list-item-title {{ item.title }}
 </template>
@@ -18,8 +18,8 @@ import { Vue, Component } from 'vue-property-decorator'
 export default class Main extends Vue {
     private drawer = null;
     private items = [
-        { title: 'Home', icon: 'home' },
-        { title: 'About', icon: 'info' }
+        { title: 'Home', icon: 'home', to: '/' },
+        { title: 'About', icon: 'info', to: 'about' }
     ];
 }
 </script>
