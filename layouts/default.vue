@@ -4,11 +4,12 @@ v-app
         v-app-bar(color='teal darken-1' dense dark)
             v-app-bar-nav-icon(@click.stop='drawer = !drawer')
             v-toolbar-title Nuxt TS App
-    v-navigation-drawer(v-model='drawer')
-        v-list(dense)
-            v-list-item(v-for='(item, i) in items' :key='i' link router)
-                v-list-item-content
-                    v-list-item-title {{ item.title }}
+        nuxt
+        v-navigation-drawer(v-model='drawer')
+            v-list(dense)
+                v-list-item(v-for='(item, i) in items' :key='i' link router)
+                    v-list-item-content
+                        v-list-item-title {{ item.title }}
 </template>
 
 <script lang="ts">
