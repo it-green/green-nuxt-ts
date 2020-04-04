@@ -13,6 +13,6 @@ module.exports = {
     // add your custom rules here
     rules: {
         'nuxt/no-cjs-in-config': 'off',
-        'indent': ['warn', 4]
+        'indent': ['warn', 4 || 2]
     }
 }

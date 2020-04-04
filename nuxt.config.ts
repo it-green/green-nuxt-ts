@@ -53,7 +53,6 @@ module.exports = {
     vuetify: {
         customVariables: ['~/assets/variables.stylus'],
         theme: {
-            dark: true,
             themes: {
                 dark: {
                     primary: colors.blue.darken2,
