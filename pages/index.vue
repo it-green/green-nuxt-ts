@@ -1,4 +1,5 @@
 <template>
+    <!-- TODO:tsの有効化とエラーがある時にコンパイルを失敗させる -->
   <v-layout
     column
     justify-center
@@ -9,11 +10,7 @@
       sm8
       md6
     >
-      <div class="text-center">
-        <logo />
-        <vuetify-logo />
-      </div>
-      <v-card>
+    <v-card>
         <v-card-title class="headline">
           Welcome to the Vuetify + Nuxt.js template
         </v-card-title>
@@ -79,14 +76,11 @@
   </v-layout>
 </template>
 
-<script>
-import Logo from '~/components/Logo.vue'
-import VuetifyLogo from '~/components/VuetifyLogo.vue'
+<script lang="ts">
+import { Vue, Component } from 'vue-property-decorator'
 
-export default {
-  components: {
-    Logo,
-    VuetifyLogo
-  }
-}
+@Component
+
+export default class App extends Vue {}
+
 </script>
