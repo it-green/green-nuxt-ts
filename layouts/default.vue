@@ -7,7 +7,7 @@ v-app
     v-content
         v-container
             nuxt
-    v-navigation-drawer(v-model='drawer')
+    v-navigation-drawer(v-model='drawer' style='position: absolute;')
         v-list(dense)
             v-list-item(v-for='(item, i) in items' :key='i' link router)
                 v-list-item-content
