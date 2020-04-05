@@ -5,7 +5,7 @@
             div hello my template powered by nuxt
             p.display-1(text--primary) Hello my Nuxt.js app Template.
             p I'll explain some usefull nuxt.js features in this page.
-    v-container(:style='{height: spaceHeight + "px"}')
+    div(:style='{height: spaceHeight + "px"}')
         p.blue--text.lighten-4 now space {{ spaceHeight }} px
     v-container(fluid)
         v-row
