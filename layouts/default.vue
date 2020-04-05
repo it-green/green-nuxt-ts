@@ -30,3 +30,9 @@ export default class Main extends Vue {
     ];
 }
 </script>
+
+<style lang="stylus">
+p
+    color #000
+
+</style>

@@ -103,10 +103,7 @@ export default class Index extends Vue {
 }
 </script>
 
-<style lang="stylus">
-p
-    color #000
-
+<style lang="stylus" scoped>
 .tip-name
     font-size 14px
     font-weight bold
