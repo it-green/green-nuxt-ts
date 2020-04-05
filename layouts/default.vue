@@ -13,6 +13,9 @@ v-app
                     v-list-item-title {{ item.title }}
     v-container(fluid)
         nuxt
+    v-footer(absolute padless)
+        v-card(flat tile width='100%').teal.lighten-1.text-center
+            v-card-text.white--text green - {{ new Date().getFullYear() }}
 </template>
 
 <script lang="ts">
