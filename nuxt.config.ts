@@ -6,15 +6,14 @@ module.exports = {
     ** Headers of the page
     */
     head: {
-        titleTemplate: '%s - ' + process.env.npm_package_name,
-        title: process.env.npm_package_name || '',
+        titleTemplate: '%s | green-Template',
         meta: [
-        { charset: 'utf-8' },
-        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-        { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
+            { charset: 'utf-8' },
+            { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+            { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
         ],
         link: [
-        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+            { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
         ]
     },
     /*
@@ -51,20 +50,19 @@ module.exports = {
     ** https://github.com/nuxt-community/vuetify-module
     */
     vuetify: {
-        customVariables: ['~/assets/variables.scss'],
+        customVariables: ['~/assets/variables.stylus'],
         theme: {
-        dark: true,
-        themes: {
-            dark: {
-            primary: colors.blue.darken2,
-            accent: colors.grey.darken3,
-            secondary: colors.amber.darken3,
-            info: colors.teal.lighten1,
-            warning: colors.amber.base,
-            error: colors.deepOrange.accent4,
-            success: colors.green.accent3
+            themes: {
+                dark: {
+                    primary: colors.blue.darken2,
+                    accent: colors.grey.darken3,
+                    secondary: colors.amber.darken3,
+                    info: colors.teal.lighten1,
+                    warning: colors.amber.base,
+                    error: colors.deepOrange.accent4,
+                    success: colors.green.accent3
+                }
             }
-        }
         }
     },
     /*
@@ -81,6 +79,12 @@ module.exports = {
         /*
         ** You can extend webpack config here
         */
+        babel: {
+            plugins: [
+                ['@babel/plugin-proposal-decorators', { legacy: true }],
+                ['@babel/plugin-proposal-class-properties', { loose: true }]
+            ]
+        }
         // extend (config: any,ctx: any) {
         // }
     }
