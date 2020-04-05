@@ -1,28 +1,29 @@
 <template lang="pug">
 v-app
-    .navigation
-        v-app-bar(color='teal darken-1' dense dark)
-            v-app-bar-nav-icon(@click.stop='drawer = !drawer')
+    .navbar
+        v-app-bar(color='teal' dark)
+            v-app-bar-nav-icon(@click='drawer = true')
             v-toolbar-title Nuxt TS App
-    v-content
-        v-container
-            nuxt
-    v-navigation-drawer(v-model='drawer' style='position: absolute;')
-        v-list(dense)
-            v-list-item(v-for='(item, i) in items' :key='i' link router)
-                v-list-item-content
+    v-navigation-drawer(v-model='drawer' absolute temporary)
+        v-list(nav dense)
+            v-list-item-group(active-class='teal--text text--accent-4')
+                v-list-item(v-for='(item, i) in items' :key='i')
+                    v-list-item-icon
+                        v-icon {{ item.icon }}
                     v-list-item-title {{ item.title }}
+    v-container(fluid)
+        nuxt
 </template>
 
 <script lang="ts">
-import { Vue, Component } from 'vue-property-decorator'
+import { Vue, Component } from 'nuxt-property-decorator'
 
 @Component
 export default class Main extends Vue {
     private drawer = null;
     private items = [
-        { title: 'Home', icon: 'home', to: '/' },
-        { title: 'About', icon: 'info', to: 'about' }
+        { title: 'Home', icon: 'mdi-home', to: '/' },
+        { title: 'About', icon: 'mdi-alert-circle', to: '/about' }
     ];
 }
 </script>
