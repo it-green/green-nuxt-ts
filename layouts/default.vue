@@ -7,7 +7,7 @@ v-app
     v-navigation-drawer(v-model='drawer' absolute temporary)
         v-list(nav dense)
             v-list-item-group(active-class='teal--text text--accent-4')
-                v-list-item(v-for='(item, i) in items' :key='i')
+                v-list-item(v-for='(item, i) in items' :key='i' :to='item.url')
                     v-list-item-icon
                         v-icon {{ item.icon }}
                     v-list-item-title {{ item.title }}
@@ -25,8 +25,8 @@ import { Vue, Component } from 'nuxt-property-decorator'
 export default class Main extends Vue {
     private drawer = null;
     private items = [
-        { title: 'Home', icon: 'mdi-home', to: '/' },
-        { title: 'About', icon: 'mdi-alert-circle', to: '/about' }
+        { title: 'Home', icon: 'mdi-home', url: '/' },
+        { title: 'About', icon: 'mdi-alert-circle', url: '/about' }
     ];
 }
 </script>
